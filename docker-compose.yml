@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+      args:
+        - REACT_APP_API_URL=${REACT_APP_API_URL}
+    restart: on-failure
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - static-data:/var/www/backend
+    depends_on:
+      - backend
