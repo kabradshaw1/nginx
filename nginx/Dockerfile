@@ -4,8 +4,8 @@ WORKDIR /frontend
 COPY react-typescript-redux/frontend/package*.json ./
 RUN npm ci
 COPY react-typescript-redux/frontend/ ./
-ARG REACT_DJ_API_URL
-ENV REACT_DJ_API_URL=$REACT_DJ_API_URL
+ARG REACT_APP_DJ_API_URL
+ENV REACT_APP_DJ_API_URL=$REACT_APP_DJ_API_URL
 RUN npm run build
 
 FROM node:18-alpine AS express-builder
@@ -13,8 +13,8 @@ WORKDIR /frontend
 COPY Node/frontend/package*.json ./
 RUN npm ci
 COPY Node/frontend/ ./
-ARG REACT_EX_API_URL
-ENV REACT_EX_API_URL=$REACT_EX_API_URL
+ARG REACT_APP_EX_API_URL
+ENV REACT_APP_EX_API_URL=$REACT_APP_EX_API_URL
 RUN npm run build
 
 
