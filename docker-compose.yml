@@ -6,7 +6,7 @@ services:
       context: ..
       dockerfile: nginx/nginx/Dockerfile
       args:
-        - REACT_APP_EX_API_URL=${REACT_EX_API_URL}
+        - REACT_APP_EX_API_URL=${REACT_APP_EX_API_URL}
         - REACT_APP_DJ_API_URL=${REACT_APP_DJ_API_URL}
     network_mode: host
     restart: on-failure
