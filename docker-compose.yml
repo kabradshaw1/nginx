@@ -3,8 +3,8 @@ version: '3.9'
 services:
   nginx:
     build:
-      context: .
-      dockerfile: nginx/Dockerfile
+      context: ..
+      dockerfile: nginx/nginx/Dockerfile
       args:
         - REACT_APP_EX_API_URL=${REACT_EX_API_URL}
         - REACT_APP_DJ_API_URL=${REACT_APP_DJ_API_URL}
@@ -14,5 +14,7 @@ services:
       - 443:443
     volumes:
       - static-data:/var/www/backend
-    depends_on:
-      - backend
+
+volumes:
+  static-data:
+    external: true
