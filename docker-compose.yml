@@ -8,6 +8,7 @@ services:
       args:
         - REACT_APP_EX_API_URL=${REACT_EX_API_URL}
         - REACT_APP_DJ_API_URL=${REACT_APP_DJ_API_URL}
+    network_mode: host
     restart: on-failure
     ports:
       - 80:80
@@ -18,3 +19,8 @@ services:
 volumes:
   react-typescript-redux_static-data:
     external: true
+
+networks:
+  default:
+    external:
+      name: mynetwork
