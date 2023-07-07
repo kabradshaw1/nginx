@@ -22,4 +22,4 @@ RUN npm run build
 FROM nginx:1.21-alpine
 COPY --from=django-builder /frontend/build /var/www/portfolio-frontend
 COPY --from=express-builder /frontend/build /var/www/tricypaa-frontend
-COPY ./nginx/nginx-setup.conf /etc/nginx/conf.d/default.conf
+COPY nginx/nginx/nginx-setup.conf /etc/nginx/conf.d/default.conf
