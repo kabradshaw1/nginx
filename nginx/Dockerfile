@@ -20,6 +20,6 @@ RUN npm run build
 
 # Nginx stage
 FROM nginx:1.21-alpine
-COPY --from=django-builder react-typescript-redux/frontend/build /var/www/django-frontend
-COPY --from=express-builder Node/frontend/build /var/www/express-frontend
+COPY --from=django-builder react-typescript-redux/frontend/build /var/www/portfolio-frontend
+COPY --from=express-builder Node/frontend/build /var/www/tricypaa-frontend
 COPY ./nginx/nginx-setup.conf /etc/nginx/conf.d/default.conf
