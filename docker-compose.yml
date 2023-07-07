@@ -10,9 +10,6 @@ services:
         - REACT_APP_DJ_API_URL=${REACT_APP_DJ_API_URL}
     network_mode: host
     restart: on-failure
-    ports:
-      - 80:80
-      - 443:443
     volumes:
       - react-typescript-redux_static-data:/var/www/backend
 
