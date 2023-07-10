@@ -10,12 +10,12 @@ services:
         - REACT_APP_DJ_API_URL=${REACT_APP_DJ_API_URL}
     network_mode: host
     restart: on-failure
-    volumes:
-      - react-typescript-redux_static-data:/var/www/backend
+    # volumes:
+    #   - react-typescript-redux_static-data:/var/www/backend
 
-volumes:
-  react-typescript-redux_static-data:
-    external: true
+# volumes:
+#   react-typescript-redux_static-data:
+#     external: true
 
 networks:
   default:
