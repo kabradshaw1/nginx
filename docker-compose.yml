@@ -3,19 +3,9 @@ version: '3.9'
 services:
   nginx:
     build:
-      context: ..
-      dockerfile: nginx/nginx/Dockerfile
-      args:
-        - REACT_APP_EX_API_URL=${REACT_APP_EX_API_URL}
-        - REACT_APP_DJ_API_URL=${REACT_APP_DJ_API_URL}
+      context: .
     network_mode: host
     restart: on-failure
-    # volumes:
-    #   - react-typescript-redux_static-data:/var/www/backend
-
-# volumes:
-#   react-typescript-redux_static-data:
-#     external: true
 
 networks:
   default:
