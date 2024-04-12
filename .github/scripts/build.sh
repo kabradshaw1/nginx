@@ -1,10 +1,11 @@
 #!/bin/bash
 set -xe
+  cd nginx
 
   docker-compose down
 
   git pull origin main
 
-  docker-compose up -d --build
+  docker image prune -a
 
-  docker image prune -a -f --filter "until=24h"
+  docker-compose up -d --build
