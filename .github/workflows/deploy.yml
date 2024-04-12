@@ -1,0 +1,19 @@
+name: Nginx Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run deployment script
+        run: |
+          chmod +x .github/scripts/build.sh
+          .github/scripts/build.sh
